@@ -1,0 +1,20 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplication3.Controllers
+{
+    public class HelloWorldController : Controller
+    {
+
+        // when you access your localhost https://localhost:1234/HelloWorld/Welcome/ 
+
+        // GET: /HelloWorld/Welcome/        //  this will output: Hello , NumTimes is: 1
+
+        // passing parameters: HelloWorld/Welcome?name=Scott&numtimes=4     //  this will output: Hello Scott, NumTimes is: 4
+
+        public string Welcome(string name, int numTimes = 1)
+        {
+            return System.Web.HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
+        }
+
+    }
+}
